@@ -1,6 +1,7 @@
-#Mathew is not very cool if you could not tell
-def MathewBluckisnotverycool():
-    x = int(input("wasgood mahomie tell us your number "))
-    print("nah i prefer the number", x*2)
+'''this might do something'''
 
-MathewBluckisnotverycool()
+try:
+    x = float(input())
+    print(x*2)
+except ValueError:
+    print("number please")
