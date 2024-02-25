@@ -21,16 +21,14 @@ keep_asking = True
 while keep_asking:
     opponent_name = input("Enter the name of an opponent (or 'done' to finish): ")
     #checks wether or not word done has been entered
-    if opponent_name == "done":
-        if len(opponents) == 0:
-            confirmation = input("You have not entered anything are you sure you want to continue? ")
-            if confirmation.lower == "yes":
-                keep_asking = False
-            else:
-                print("Then please make sure to enter a opponent name before entering done")
-
+    if len(opponents) == 0 and opponent_name == "done":
+        confirmation = input("You have not entered anything are you sure you want to continue? ")
+        if confirmation.lower == "yes":
+            keep_asking = False
+        else:
+            print("Then please make sure to enter a opponent name before entering done")
+    elif opponent_name == "done":
         keep_asking = False
-
     else:
         if opponent_name.strip(" ") ==  "":
             print("invalid name")
