@@ -35,7 +35,6 @@ while keep_asking:
         else:
             opponents.append(opponent_name)
 
-
 count = 0
 #for loop to ask the scores
 for opponent in opponents:
@@ -45,7 +44,10 @@ for opponent in opponents:
         try:
             print(f"{team_name} vs {opponents[count]}")
             your_score = int(input("Enter your score: "))
-            keep_going = False
+            if your_score < 0:
+                print("please enter a positive number")
+            else:
+                keep_going = False
         except ValueError:
             print("please enter a valid number")
     #get opponent score
@@ -53,7 +55,10 @@ for opponent in opponents:
     while continue_asking:
         try:
             opponent_score = int(input("Enter your opponents score: "))
-            continue_asking = False
+            if opponent_score < 0 :
+                print("please enter a postitive number")
+            else:
+                continue_asking = False
         except ValueError:
             print("please enter a valid number")
     #checks wether or not your score is greater less or equal than the opponents
@@ -69,3 +74,4 @@ for opponent in opponents:
 total_points = sum(results)
 #prints your team name and the total competition points your team earned
 print(f"{team_name} has earned {total_points} competition points.")
+
