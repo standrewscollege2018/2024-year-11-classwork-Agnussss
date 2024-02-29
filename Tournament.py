@@ -23,7 +23,7 @@ while keep_asking:
     #checks wether or not word done has been entered
     if len(opponents) == 0 and opponent_name == "done":
         confirmation = input("You have not entered anything are you sure you want to continue? ")
-        if confirmation.lower == "yes":
+        if confirmation.lower() == "yes":
             keep_asking = False
         else:
             print("Then please make sure to enter a opponent name before entering done")
