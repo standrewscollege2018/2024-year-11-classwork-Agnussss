@@ -1,13 +1,17 @@
+''' I am a docstring '''
 
-# Vehicles
+# Vehicles contains sub-lists for each vehicle, containing name number of seats and stock
 vehicles = [["Suzuki Van", 2, 1], ["Toyota Corolla", 4, 1], ["Honda CRV", 4, 1 ], ["Suzuki Swift", 4, 1], ["Mitsubishi Airtrek", 4, 1], ["Nissan DC Ute", 4, 1], ["Toyota Previa", 7, 1], ["Toyota Hi Ace", 12, 2]]
-# Bookings
+# Bookings will contain sub lists with thr vehicle and name of person booking it
 bookings = []
+count = 0
 # Functions
+''' Docstring describes functions'''
 def display_vehicles():
   print("Vehicles available for booking: ")
   for i in range(len(vehicles)):
     print(f"{i+1}. {vehicles[i][0]} ({vehicles[i][1]} seats) (In Stock {vehicles[i][2]})")
+
 def book_vehicle():
     display_vehicles()
     keep_asking = True
@@ -31,14 +35,19 @@ def book_vehicle():
             print("please enter a valid name")
         else:
             continue_asking = False
+
     bookings.append([vehicle[0], name])
     vehicle[2] -= 1
     print(f"Vehicle {vehicle[0]} booked for {name}.")
+
 def end_of_day():
   print("End of day bookings:")
   for booking in bookings:
     print(f"{booking[0]} - {booking[1]}")
   bookings.clear()
+  if len(bookings) == 0:
+      print("There were no bookings today")
+
 # Main loop
 keep_asking = True
 while keep_asking:
